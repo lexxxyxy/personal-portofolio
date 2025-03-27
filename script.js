@@ -136,39 +136,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Mencegah form submit secara normal
-
-    var fullname = document.getElementById("fullname").value;
-    var email = document.getElementById("email").value;
-    var message = document.getElementById("message").value;
-
-    // Format pesan untuk WhatsApp dengan parameter text=
-    var whatsappMessage =
-      "Name: " +
-      fullname +
-      "%0A" +
-      "Email: " +
-      email +
-      "%0A" +
-      "Message: " +
-      message;
-
-    // Construct the WhatsApp link dengan parameter text=
-    var whatsappLink =
-      "https://api.whatsapp.com/send?phone=6285779678006&text=" +
-      whatsappMessage;
-
-    // Buka WhatsApp di tab baru
-    window.open(whatsappLink, "_blank");
-
-    // Kosongkan form setelah mengirim
-    document.getElementById("fullname").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("message").value = "";
-  });
 
   function togglePlay(item) {
     const audio = item.querySelector(".music-audio");

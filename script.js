@@ -170,4 +170,38 @@ document
     document.getElementById("message").value = "";
   });
 
+  function togglePlay(item) {
+    const audio = item.querySelector(".music-audio");
+    const playOverlay = item.querySelector(".play-overlay");
+  
+    document.querySelectorAll(".music-item").forEach(otherItem => {
+      const otherAudio = otherItem.querySelector(".music-audio");
+      const otherPlayOverlay = otherItem.querySelector(".play-overlay");
+      if (otherAudio !== audio) {
+        otherAudio.pause();
+        otherAudio.currentTime = 0;
+        otherPlayOverlay.textContent = "▶";
+      }
+    });
+  
+    if (audio.paused) {
+      audio.play();
+      playOverlay.textContent = "❚❚";
+    } else {
+      audio.pause();
+      playOverlay.textContent = "▶";
+    }
+  
+    audio.onended = () => {
+      playOverlay.textContent = "▶";
+    };
+  }
+  
+
+  function updateProgress(audio) {
+    const progressBar = audio.closest(".music-content").querySelector(".progress-bar");
+    const percentage = (audio.currentTime / audio.duration) * 100;
+    progressBar.style.width = percentage + "%";
+  }
+
   

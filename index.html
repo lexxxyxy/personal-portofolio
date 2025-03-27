@@ -986,84 +986,87 @@
           <section class="music-favorites">
             <h2 class="section-title">Musik Favorit</h2>
             <div class="music-list">
-              <div class="music-item">
+              <div class="music-item" onclick="togglePlay(this)">
                 <figure class="music-banner-box">
                   <img
                     src="https://i.ytimg.com/vi/k7Hdltf9qLI/maxresdefault.jpg"
                     alt="Sia - Snowman"
                     loading="lazy"
                   />
+                  <div class="play-overlay">▶</div>
                 </figure>
                 <div class="music-content">
                   <h3 class="music-title">Snowman</h3>
                   <p class="music-artist">Sia</p>
+                  <p class="music-duration">2:45</p>
+                  <audio class="music-audio" src="audio/Sia - Snowman Lyrics.mp3" ontimeupdate="updateProgress(this)"></audio>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
                 </div>
               </div>
-
-              <div class="music-item">
+          
+              <div class="music-item" onclick="togglePlay(this)">
                 <figure class="music-banner-box">
                   <img
                     src="https://i.ytimg.com/vi/GZoUCPx59Ks/maxresdefault.jpg"
                     alt="Joji - Glimpse of Us"
                     loading="lazy"
                   />
+                  <div class="play-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
                 </figure>
                 <div class="music-content">
                   <h3 class="music-title">Glimpse of Us</h3>
                   <p class="music-artist">Joji</p>
+                  <p class="music-duration">3:53</p>
+                  <audio class="music-audio" src="audio/Joji - Glimpse of Us Lyrics.mp3" ontimeupdate="updateProgress(this)"></audio>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
                 </div>
               </div>
-
-              <div class="music-item">
+          
+              <div class="music-item" onclick="togglePlay(this)">
                 <figure class="music-banner-box">
                   <img
                     src="https://i.ytimg.com/vi/swaKxeArlWE/maxresdefault.jpg"
                     alt="The Neighbourhood - Sweater Weather"
                     loading="lazy"
                   />
+                  <div class="play-overlay">▶</div>
                 </figure>
                 <div class="music-content">
                   <h3 class="music-title">Sweater Weather</h3>
                   <p class="music-artist">The Neighbourhood</p>
+                  <p class="music-duration">3:56</p>
+                  <audio class="music-audio" src="audio/The Neighbourhood - Sweater Weather Lyrics.mp3" ontimeupdate="updateProgress(this)"></audio>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
                 </div>
               </div>
-              <div class="music-item">
+            </div>
+          
+              <div class="music-item" onclick="togglePlay(this)">
                 <figure class="music-banner-box">
                   <img
-                    src="https://i.ytimg.com/vi/swaKxeArlWE/maxresdefault.jpg"
-                    alt="The Neighbourhood - Sweater Weather"
+                    src="https://images.genius.com/46d0cab6d3c43123c5b5e58e2948bf07.1000x1000x1.jpg"
                     loading="lazy"
                   />
+                  <div class="play-overlay">▶</div>
                 </figure>
                 <div class="music-content">
-                  <h3 class="music-title">Sweater Weather</h3>
-                  <p class="music-artist">The Neighbourhood</p>
-                </div>
-              </div>
-              <div class="music-item">
-                <figure class="music-banner-box">
-                  <img
-                    src="https://i.ytimg.com/vi/swaKxeArlWE/maxresdefault.jpg"
-                    alt="The Neighbourhood - Sweater Weather"
-                    loading="lazy"
-                  />
-                </figure>
-                <div class="music-content">
-                  <h3 class="music-title">Sweater Weather</h3>
-                  <p class="music-artist">The Neighbourhood</p>
-                </div>
-              </div>
-              <div class="music-item">
-                <figure class="music-banner-box">
-                  <img
-                    src="https://i.ytimg.com/vi/swaKxeArlWE/maxresdefault.jpg"
-                    alt="The Neighbourhood - Sweater Weather"
-                    loading="lazy"
-                  />
-                </figure>
-                <div class="music-content">
-                  <h3 class="music-title">Sweater Weather</h3>
-                  <p class="music-artist">The Neighbourhood</p>
+                  <h3 class="music-title">End Of Beginningr</h3>
+                  <p class="music-artist">Djo</p>
+                  <p class="music-duration">2:39</p>
+                  <audio class="music-audio" src="audio/Djo - End Of Beginning Official Audio.mp3" ontimeupdate="updateProgress(this)"></audio>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1128,6 +1131,6 @@
     <script src="script.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
+      
   </body>
 </html>

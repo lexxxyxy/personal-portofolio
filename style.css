@@ -1603,7 +1603,7 @@ textarea.form-input::-webkit-resizer {
     right: 0;
     width: max-content;
     border-radius: 0 20px;
-    padding: 0 20px;
+    padding: 0 10px;
     box-shadow: none;
   }
 
@@ -1765,43 +1765,50 @@ textarea.form-input::-webkit-resizer {
   padding-bottom: 5px;
 }
 
-.music-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-}
-
 .music-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
   background-color: #181818;
-  padding: 15px;
-  border-radius: 8px;
-  transition: transform 0.2s, background 0.2s;
   cursor: pointer;
 }
-
-.music-item:hover {
-  background-color: #282828;
-  transform: scale(1.05);
+.music-banner-box {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
 }
-
 .music-banner-box img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 5px;
+}
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.3s;
+}
+.music-banner-box:hover .play-overlay {
+  opacity: 1;
 }
 
-.music-content {
-  text-align: center;
-  margin-top: 10px;
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background: #555;
+  margin-top: 5px;
+  border-radius: 2px;
+  overflow: hidden;
 }
-
-.music-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 5px;
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: #1DB954;
+  transition: width 0.1s;
 }
-
-.music-artist {
-  font-size: 14px;
-  color: #b3b3b3;
-}
-

@@ -1,7 +1,7 @@
 "use strict";
 
 // element toggle function
-const elementToggleFunc = (elem) => {
+const elementToggleFunc = function (elem) {
   elem.classList.toggle("active");
 };
 
@@ -10,7 +10,7 @@ const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
-sidebarBtn?.addEventListener("click", () => {
+sidebarBtn.addEventListener("click", function () {
   elementToggleFunc(sidebar);
 });
 
@@ -26,51 +26,55 @@ const modalTitle = document.querySelector("[data-modal-title]");
 const modalText = document.querySelector("[data-modal-text]");
 
 // modal toggle function
-const testimonialsModalFunc = () => {
-  modalContainer?.classList.toggle("active");
-  overlay?.classList.toggle("active");
+const testimonialsModalFunc = function () {
+  modalContainer.classList.toggle("active");
+  overlay.classList.toggle("active");
 };
 
 // add click event to all modal items
-testimonialsItem.forEach((item) => {
-  item.addEventListener("click", function () {
+for (let i = 0; i < testimonialsItem.length; i++) {
+  testimonialsItem[i].addEventListener("click", function () {
     modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
     modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+    modalTitle.innerHTML = this.querySelector(
+      "[data-testimonials-title]"
+    ).innerHTML;
+    modalText.innerHTML = this.querySelector(
+      "[data-testimonials-text]"
+    ).innerHTML;
 
     testimonialsModalFunc();
   });
-});
+}
 
 // add click event to modal close button
-modalCloseBtn?.addEventListener("click", testimonialsModalFunc);
-overlay?.addEventListener("click", testimonialsModalFunc);
+modalCloseBtn.addEventListener("click", testimonialsModalFunc);
+overlay.addEventListener("click", testimonialsModalFunc);
 
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-select-value]"); // Fix typo dari "data-selecct-value"
+const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-select?.addEventListener("click", function () {
+select.addEventListener("click", function () {
   elementToggleFunc(this);
 });
 
 // add event in all select items
-selectItems.forEach((item) => {
-  item.addEventListener("click", function () {
+for (let i = 0; i < selectItems.length; i++) {
+  selectItems[i].addEventListener("click", function () {
     let selectedValue = this.innerText.toLowerCase();
     selectValue.innerText = this.innerText;
     elementToggleFunc(select);
     filterFunc(selectedValue);
   });
-});
+}
 
 // filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
-const filterFunc = (selectedValue) => {
+const filterFunc = function (selectedValue) {
   selectedValue = selectedValue.toLowerCase(); // Pastikan input user jadi huruf kecil
 
   filterItems.forEach((item) => {
@@ -87,8 +91,8 @@ const filterFunc = (selectedValue) => {
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
 
-filterBtn.forEach((btn) => {
-  btn.addEventListener("click", function () {
+for (let i = 0; i < filterBtn.length; i++) {
+  filterBtn[i].addEventListener("click", function () {
     let selectedValue = this.innerText.toLowerCase();
     selectValue.innerText = this.innerText;
     filterFunc(selectedValue);
@@ -97,15 +101,14 @@ filterBtn.forEach((btn) => {
     this.classList.add("active");
     lastClickedBtn = this;
   });
-});
+}
 
-// Form validation
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
-formInputs.forEach((input) => {
-  input.addEventListener("input", function () {
+for (let i = 0; i < formInputs.length; i++) {
+  formInputs[i].addEventListener("input", function () {
     // check form validation
     if (form.checkValidity()) {
       formBtn.removeAttribute("disabled");
@@ -113,59 +116,91 @@ formInputs.forEach((input) => {
       formBtn.setAttribute("disabled", "");
     }
   });
-});
+}
 
-// Navigation functionality
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-navigationLinks.forEach((link) => {
-  link.addEventListener("click", function () {
-    const targetPage = this.innerHTML.toLowerCase();
-
-    pages.forEach((page, index) => {
-      if (targetPage === page.dataset.page) {
-        page.classList.add("active");
-        navigationLinks[index].classList.add("active");
+for (let i = 0; i < navigationLinks.length; i++) {
+  navigationLinks[i].addEventListener("click", function () {
+    for (let i = 0; i < pages.length; i++) {
+      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+        pages[i].classList.add("active");
+        navigationLinks[i].classList.add("active");
         window.scrollTo(0, 0);
       } else {
-        page.classList.remove("active");
-        navigationLinks[index].classList.remove("active");
+        pages[i].classList.remove("active");
+        navigationLinks[i].classList.remove("active");
       }
-    });
-  });
-});
-
-// Music player functionality
-function togglePlay(item) {
-  const audio = item.querySelector(".music-audio");
-  const playOverlay = item.querySelector(".play-overlay");
-
-  document.querySelectorAll(".music-item").forEach((otherItem) => {
-    const otherAudio = otherItem.querySelector(".music-audio");
-    const otherPlayOverlay = otherItem.querySelector(".play-overlay");
-    if (otherAudio !== audio) {
-      otherAudio.pause();
-      otherAudio.currentTime = 0;
-      otherPlayOverlay.textContent = "▶";
     }
   });
+}
 
-  if (audio.paused) {
-    audio.play();
-    playOverlay.textContent = "❚❚";
-  } else {
-    audio.pause();
-    playOverlay.textContent = "▶";
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Mencegah form submit secara normal
+
+    var fullname = document.getElementById("fullname").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    // Format pesan untuk WhatsApp dengan parameter text=
+    var whatsappMessage =
+      "Name: " +
+      fullname +
+      "%0A" +
+      "Email: " +
+      email +
+      "%0A" +
+      "Message: " +
+      message;
+
+    // Construct the WhatsApp link dengan parameter text=
+    var whatsappLink =
+      "https://api.whatsapp.com/send?phone=6285779678006&text=" +
+      whatsappMessage;
+
+    // Buka WhatsApp di tab baru
+    window.open(whatsappLink, "_blank");
+
+    // Kosongkan form setelah mengirim
+    document.getElementById("fullname").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+  });
+
+  function togglePlay(item) {
+    const audio = item.querySelector(".music-audio");
+    const playOverlay = item.querySelector(".play-overlay");
+  
+    document.querySelectorAll(".music-item").forEach(otherItem => {
+      const otherAudio = otherItem.querySelector(".music-audio");
+      const otherPlayOverlay = otherItem.querySelector(".play-overlay");
+      if (otherAudio !== audio) {
+        otherAudio.pause();
+        otherAudio.currentTime = 0;
+        otherPlayOverlay.textContent = "▶";
+      }
+    });
+  
+    if (audio.paused) {
+      audio.play();
+      playOverlay.textContent = "❚❚";
+    } else {
+      audio.pause();
+      playOverlay.textContent = "▶";
+    }
+  
+    audio.onended = () => {
+      playOverlay.textContent = "▶";
+    };
+  }
+  
+
+  function updateProgress(audio) {
+    const progressBar = audio.closest(".music-content").querySelector(".progress-bar");
+    const percentage = (audio.currentTime / audio.duration) * 100;
+    progressBar.style.width = percentage + "%";
   }
 
-  audio.onended = () => {
-    playOverlay.textContent = "▶";
-  };
-}
-
-function updateProgress(audio) {
-  const progressBar = audio.closest(".music-content").querySelector(".progress-bar");
-  const percentage = (audio.currentTime / audio.duration) * 100;
-  progressBar.style.width = percentage + "%";
-}

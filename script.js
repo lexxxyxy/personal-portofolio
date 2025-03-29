@@ -136,61 +136,63 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-  function togglePlay(item) {
-    const audio = item.querySelector(".music-audio");
-    const playOverlay = item.querySelector(".play-overlay");
-  
-    document.querySelectorAll(".music-item").forEach(otherItem => {
-      const otherAudio = otherItem.querySelector(".music-audio");
-      const otherPlayOverlay = otherItem.querySelector(".play-overlay");
-      if (otherAudio !== audio) {
-        otherAudio.pause();
-        otherAudio.currentTime = 0;
-        otherPlayOverlay.textContent = "▶";
-      }
-    });
-  
-    if (audio.paused) {
-      audio.play();
-      playOverlay.textContent = "❚❚";
-    } else {
-      audio.pause();
-      playOverlay.textContent = "▶";
-    }
-  
-    audio.onended = () => {
-      playOverlay.textContent = "▶";
-    };
-  }
-  
+function togglePlay(item) {
+  const audio = item.querySelector(".music-audio");
+  const playOverlay = item.querySelector(".play-overlay");
 
-  function updateProgress(audio) {
-    const progressBar = audio.closest(".music-content").querySelector(".progress-bar");
-    const percentage = (audio.currentTime / audio.duration) * 300;
-    progressBar.style.width = percentage + "%";
+  document.querySelectorAll(".music-item").forEach((otherItem) => {
+    const otherAudio = otherItem.querySelector(".music-audio");
+    const otherPlayOverlay = otherItem.querySelector(".play-overlay");
+    if (otherAudio !== audio) {
+      otherAudio.pause();
+      otherAudio.currentTime = 0;
+      otherPlayOverlay.textContent = "▶";
+    }
+  });
+
+  if (audio.paused) {
+    audio.play();
+    playOverlay.textContent = "❚❚";
+  } else {
+    audio.pause();
+    playOverlay.textContent = "▶";
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".music-item").forEach((item, index) => {
-        setTimeout(() => {
-            item.classList.add("show");
-        }, index * 300);
-    });
-});
-
-function togglePlay(el) {
-    let audio = el.querySelector(".music-audio");
-    if (audio.paused) {
-        document.querySelectorAll(".music-audio").forEach(a => a.pause());
-        audio.play();
-    } else {
-        audio.pause();
-    }
+  audio.onended = () => {
+    playOverlay.textContent = "▶";
+  };
 }
 
 function updateProgress(audio) {
-    let progress = (audio.currentTime / audio.duration) * 100;
-    audio.closest(".music-content").querySelector(".progress-bar").style.width = progress + "%";
+  const progressBar = audio
+    .closest(".music-content")
+    .querySelector(".progress-bar");
+  const percentage = (audio.currentTime / audio.duration) * 300;
+  progressBar.style.width = percentage + "%";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".music-item").forEach((item, index) => {
+    setTimeout(() => {
+      item.classList.add("show");
+    }, index * 300);
+  });
+});
+
+function togglePlay(el) {
+  let audio = el.querySelector(".music-audio");
+  if (audio.paused) {
+    document.querySelectorAll(".music-audio").forEach((a) => a.pause());
+    audio.play();
+  } else {
+    audio.pause();
+  }
+}
+
+function updateProgress(audio) {
+  let progress = (audio.currentTime / audio.duration) * 100;
+  audio.closest(".music-content").querySelector(".progress-bar").style.width =
+    progress + "%";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -205,10 +207,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Trigger animasi ketika About muncul
-  document.querySelector("[data-page='about']").addEventListener("click", showAboutSection);
+  document
+    .querySelector("[data-page='about']")
+    .addEventListener("click", showAboutSection);
 
   // Opsional: Bisa tambahin event untuk menyembunyikan saat ganti halaman
-  document.querySelectorAll("[data-page]:not([data-page='about'])").forEach((el) => {
-    el.addEventListener("click", hideAboutSection);
-  });
+  document
+    .querySelectorAll("[data-page]:not([data-page='about'])")
+    .forEach((el) => {
+      el.addEventListener("click", hideAboutSection);
+    });
 });

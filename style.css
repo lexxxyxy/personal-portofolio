@@ -439,17 +439,17 @@ main {
 }
 
 .navbar-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 0 10px;
+ display: flex;
+    flex-wrap: wrap; /* Allows items to wrap in smaller screens */
+    justify-content: center; /* Centers items horizontally */
+    gap: 20px; /* Adds spacing between items */
+    padding: 10px; /* Adds some padding for better appearance */
 }
 
 .navbar-link {
   color: var(--light-gray);
   font-size: var(--fs-6);
-  padding: 20px 5px;
+ 
   transition: color var(--transition-1);
 }
 
@@ -1251,9 +1251,11 @@ main {
     border-radius: 20px 20px 0 0;
   }
 
-  .navbar-list {
-    gap: 20px;
-  }
+    .navbar-link {
+        font-size: 14px; /* Adjust font-size for smaller screens */
+        padding: 10px; /* Make padding smaller */
+    }
+
 
   .navbar-link {
     --fs-8: 14px;

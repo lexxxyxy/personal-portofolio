@@ -2,369 +2,976 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
-      integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      rel="shortcut icon"
+      href="images/Kucing pPP.jpg"
+      type="image/x-icon"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Personal branding | Nightfall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
-    <nav class="navbar">
-      <a href="#" class="navbar__logo"
-        ><i class="ri-code-s-slash-line"></i> Nightfall Developer</a
-      >
-
-      <div class="navbar__menu">
-        <a href="#" class="navbar__link">Home</a>
-        <a href="#" class="navbar__link">Projects</a>
-        <a href="#" class="navbar__link">Skills</a>
-        <a href="#" class="navbar__link">About</a>
-      </div>
-
-      <button class="btn btn-click-me">Click me</button>
-    </nav>
-
-    <section class="hero">
-      <div class="hero__content">
-        <img
-          src="assets/Kucing pPP.jpg"
-          alt="Profile image"
-          class="hero__image"
-        />
-        <h2>Halo semua, Nightfall di sini!</h2>
-      </div>
-
-      <div class="hero__intro">
-        <h3>Web Developer | Magic Enthusiast | Gamer</h3>
-        <p>
-          Saya seorang pengembang web yang fokus pada desain responsif dan
-          pengalaman pengguna yang optimal. Selain itu, saya juga menyukai trik
-          sulap dengan kartu, bermain game untuk bersantai, dan selalu tertarik
-          untuk belajar hal baru di dunia teknologi.
-        </p>
-
-        <div class="hero__actions">
-          <button class="btn">Buka Kerja Sama</button>
-          <button class="btn">Lihat Portofolio Saya</button>
-        </div>
-      </div>
-
-      <div class="hero__socials">
-        <a href=""><i class="ri-instagram-line"></i></a>
-        <a href=""><i class="ri-tiktok-line"></i></a>
-        <a href=""><i class="ri-facebook-line"></i></a>
-        <a href=""><i class="ri-linkedin-line"></i></a>
-      </div>
-    </section>
-
-    <section class="skills">
-      <div class="skills_deskription">
-        <h3>Personal Branding</h3>
-        <p>
-          Saya adalah seorang pengembang web yang fokus pada desain responsif
-          dan pengalaman pengguna yang optimal. Memiliki pengalaman dalam
-          membangun website dengan HTML, CSS, JavaScript, serta mengembangkan
-          proyek dengan React JS. Selain itu, saya juga memiliki minat dalam
-          dunia teknologi, desain grafis, dan dokumentasi proyek.
-        </p>
-
-        <div class="skills__action">
-          <button class="btn">Kerja sama gas?</button>
-          <button class="btn btn--secondary">Kirim Email</button>
-        </div>
-      </div>
-      <div class="skills__stats">
-        <i class="ri-code-box-line"></i>
-        <div class="skill__info">
-          <h5>15+</h5>
-          <p>Website & Front-End Projects</p>
-        </div>
-        <i class="ri-reactjs-line"></i>
-        <div class="skill__info">
-          <h5>5+</h5>
-          <p>React Projects</p>
-        </div>
-        <div class="skill__info">
-          <h5>10+</h5>
-          <p>Responsive UI Designs</p>
-        </div>
-        <i class="ri-paint-brush-line"></i>
-        <div class="skill__info">
-          <h5>8+</h5>
-          <p>Graphic Design Projects</p>
-        </div>
-        <i class="ri-terminal-box-line"></i>
-      </div>
-    </section>
-
-    <section class="showcase">
-      <div class="showcase__header">
-        <h3>I Can Help You With:</h3>
-        <button class="btn">Lihat Portofolio Gw</button>
-      </div>
-
-      <div class="showcase_categories">
-        <section class="category">
-          <div class="category__header">
-            <div class="category__title">
-              <i class="ri-macbook-line"></i>
-              <h4>Portfolio Websites And Random Websites</h4>
-            </div>
-            <div class="category__desc">
-              <p>
-                Designing and developing eye-catching, fully responsive
-                portfolio websites that highlight your skills and projects,
-                ensuring a professional online presence.
-              </p>
-              <a href="#"><i class="ri-share-circle-line"></i></a>
-            </div>
+    <main>
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar-info">
+          <img src="images/Kucing pPP.jpg" alt="Xyxy" width="80" />
+          <div class="info-content">
+            <h1 class="name animated-name" title="Xyxy">
+              <span id="name-text"></span>
+            </h1>
+            <p class="title">Web Development</p>
           </div>
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+        </div>
 
-          <div class="category__projects">
-            <div class="project-card">
-              <img
-                src="assets/project-1.png"
-                alt="Portfolio 1"
-                class="project-card__image"
-              />
-              <div class="project-card__info">
-                <h5>Portfolio-1</h5>
-                <p>August 2023</p>
+        <div class="sidebar-info_more">
+          <div class="separator"></div>
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
               </div>
-              <p class="project-card__desc">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
-                autem soluta consequatur, sequi et sint laudantium non rem
-                veritatis.
-              </p>
-              <button class="btn">View Live Demo</button>
-            </div>
-            <div class="project-card">
-              <img
-                src="assets/project-2.png"
-                alt="Portfolio 2"
-                class="project-card__image"
-              />
-              <div class="project-card__info">
-                <h5>Rexus Shop</h5>
-                <p>August 2023</p>
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+                <a href="mailto:Xyxyxy1228@gmail.com" class="contact-link"
+                  >Xyxyxy1228@gmail.com</a
+                >
               </div>
-              <p class="project-card__desc">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
-                autem soluta consequatur, sequi et sint laudantium non rem
-                veritatis.
-              </p>
-              <button class="btn">View Live Demo</button>
-            </div>
-            <div class="project-card">
-              <img
-                src="assets/project-3.png"
-                alt="Portfolio 3"
-                class="project-card__image"
-              />
-              <div class="project-card__info">
-                <h5>Portfolio-3</h5>
-                <p>August 2023</p>
+            </li>
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
               </div>
-              <p class="project-card__desc">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
-                autem soluta consequatur, sequi et sint laudantium non rem
-                veritatis.
-              </p>
-              <button class="btn">View Live Demo</button>
-            </div>
-            <div class="project-card">
-              <img
-                src="assets/project-7.png"
-                alt="Portfolio 4"
-                class="project-card__image"
-              />
-              <div class="project-card__info">
-                <h5>Film HTML,CSS,JS</h5>
-                <p>August 2023</p>
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+                <a href="tel:+6282125887064" class="contact-link"
+                  >+62 821-2588-7064</a
+                >
               </div>
-              <p class="project-card__desc">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
-                autem soluta consequatur, sequi et sint laudantium non rem
-                veritatis.
-              </p>
-              <button class="btn">View Live Demo</button>
-            </div>
-          </div>
-        </section>
+            </li>
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+              <div class="contact-info">
+                <p class="contact-title">Birthday</p>
+                <time datetime="2007-07-02">2 July 2007</time>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+                <address>Jakarta, Indonesia</address>
+              </div>
+            </li>
+          </ul>
+          <div class="separator"></div>
+          <ul class="social-list">
+            <li class="social-item">
+              <a
+                href="https://api.whatsapp.com/send?phone=6285779678006"
+                class="social-link"
+              >
+                <ion-icon class="socials-icons" name="logo-whatsapp"></ion-icon>
+              </a>
+            </li>
+            <li class="social-item">
+              <a
+                href="https://www.instagram.com/lexyxyxy1/"
+                class="social-link"
+              >
+                <ion-icon
+                  class="socials-icons"
+                  name="logo-instagram"
+                ></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
 
-        <section class="category">
-          <div class="category__header">
-            <div class="category__title">
-              <i class="ri-group-2-line"></i>
-              <h4>Website Development</h4>
-            </div>
-            <div class="category__desc">
-              <p>
-                End-to-end development of responsive websites that look great on
-                all devices, with a focus on performance and aesthetics.
-              </p>
-              <a href="#"><i class="ri-share-circle-line"></i></a>
-            </div>
-          </div>
+      <div class="main-content">
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link active" data-nav-link>About</button>
+            </li>
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Resume</button>
+            </li>
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Portfolio</button>
+            </li>
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Game Fav</button>
+            </li>
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Music Fav</button>
+            </li>
+          </ul>
+        </nav>
 
-          <div class="category__projects">
-            <div class="project-card">
-              <img
-                src="assets/project-5.png"
-                alt="NFT Landing"
-                class="project-card__image"
-              />
-              <div class="project-card__info">
-                <h5>Iskariot Gemini</h5>
-                <p>August 2023</p>
+        <article class="about active" data-page="about">
+          <header>
+            <h2 class="h2 article-title">About me</h2>
+          </header>
+          <section class="about-text">
+            <p>
+              Hello! I’m Xyxy Lex, a passionate programmer with a deep interest
+              in web development. My ultimate goal is to become a reliable and
+              professional programmer who builds impactful digital experiences.
+            </p>
+            <p>
+              I am constantly learning and sharpening my skills to create
+              innovative and effective websites that provide real value to
+              others. The world of programming excites me, and I’m eager to
+              explore deeper, take on new challenges, and contribute to
+              meaningful projects that benefit both myself and the community.
+            </p>
+          </section>
+
+          <section class="service">
+            <h3 class="h3 service-title">What I'm doing</h3>
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="images/icon-design.svg"
+                    alt="Design icon"
+                    width="40"
+                  />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Accounting</h4>
+                  <p class="service-item-text">
+                    The most modern and high-quality accounting practices start
+                    with accurate basic record-keeping.
+                  </p>
+                </div>
+              </li>
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="images/icon-dev.svg"
+                    alt="Web development icon"
+                    width="40"
+                  />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Web Development</h4>
+                  <p class="service-item-text">
+                    High quality site development at the Intermediate level.
+                  </p>
+                </div>
+              </li>
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="images/icon-app.svg"
+                    alt="Mobile app icon"
+                    width="40"
+                  />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Mobile Apps</h4>
+                  <p class="service-item-text">
+                    Simple app development for Android.
+                  </p>
+                </div>
+              </li>
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="images/icon-photo.svg"
+                    alt="Photography icon"
+                    width="40"
+                  />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Photography</h4>
+                  <p class="service-item-text">
+                    I create high quality photos of any category at an
+                    intermediate level.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="testimonials">
+            <h3 class="h3 testimonials-title">Testimonials</h3>
+            <ul class="testimonials-list has-scrollbar">
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <img
+                    src="https://vignette.wikia.nocookie.net/shingeki-no-kyojin/images/2/2d/Levi_Ackerman_(Anime).png/revision/latest?cb=20180816051528&path-prefix=es"
+                    alt="Levi Ackerman"
+                  />
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    Levi Ackerman
+                  </h4>
+
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      I am very satisfied with the web design services provided
+                      by this team. Not only do they have incredible creativity
+                      in designing attractive displays, but they also pay
+                      attention to every detail to ensure our website looks
+                      professional and is easy to use. The end result exceeded
+                      our expectations!
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <img
+                    src="https://cdna.artstation.com/p/assets/images/images/057/316/054/large/putri-soekidin-db1cd307-6c72-45cd-9ddf-2d5c3b42ff1d.jpg?1671284605"
+                    alt="Gojo Satoru"
+                  />
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    Gojo Satoru
+                  </h4>
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      This web development team is truly amazing! They not only
+                      understood our technical needs well, but also delivered
+                      them very efficiently. The development process went
+                      smoothly, communication was always open, and the end
+                      result was a functional and responsive website. We highly
+                      recommend their services to anyone needing quality web
+                      development.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <img
+                    src="https://i.pinimg.com/originals/26/07/08/2607088af561811deeb3f9cceff5a696.jpg"
+                    alt="Rem"
+                  />
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    Rem
+                  </h4>
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      Our experience with this mobile app development team has
+                      been great! They are very dedicated to providing solutions
+                      that suit our business needs. From user interface design
+                      to final testing, everything was done very professionally.
+                      We are very pleased with the results and believe that our
+                      mobile app will be a valuable tool for our customers.
+                      Thank you for your hard work.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <img
+                    src="https://comicvine.gamespot.com/a/uploads/scale_super/11160/111605805/8687496-monkey_d__luffy__gear_5____updated_by_b_a_i_o_r_e_t_t_o_df3gezw-fullview.png"
+                    alt="Luffy"
+                  />
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    Luffy
+                  </h4>
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      I couldn't be happier with the photography results this
+                      photographer provided! They not only have extraordinary
+                      technical skills in taking pictures, but also have
+                      extraordinary artistic talent in capturing beautiful
+                      moments. From shooting to editing, everything was done
+                      very professionally. I highly recommend their photography
+                      services to anyone looking for exceptional results!
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <div class="modal-container" data-modal-container>
+            <div class="overlay" data-overlay></div>
+            <section class="testimonials-modal">
+              <button class="modal-close-btn" data-modal-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+              <div class="modal-img-wrapper">
+                <img src="images/icon-quote.svg" alt="quote icon" />
               </div>
-              <p class="project-card__desc">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
-                autem soluta consequatur, sequi et sint laudantium non rem
-                veritatis.
-              </p>
-              <button class="btn">View Live Demo</button>
-            </div>
-            <div class="project-card">
-              <img
-                src="assets/project-6.png"
-                alt="Music Platform"
-                class="project-card__image"
-              />
-              <div class="project-card__info">
-                <h5>Mamak Coffe</h5>
-                <p>August 2023</p>
+              <div class="modal-content">
+                <h4 class="h3 modal-title" data-modal-title>Pikaa</h4>
+                <time datetime="2024-03-25">25 Maret, 2024</time>
+                <div data-modal-text>
+                  <p>
+                    I am very satisfied with the web design services provided by
+                    this team. Not only do they have incredible creativity in
+                    designing attractive displays, but they also pay attention
+                    to every detail to ensure our website looks professional and
+                    is easy to use. The end result exceeded our expectations!
+                  </p>
+                </div>
               </div>
-              <p class="project-card__desc">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
-                autem soluta consequatur, sequi et sint laudantium non rem
-                veritatis.
-              </p>
-              <button class="btn">View Live Demo</button>
-            </div>
-            <div class="project-card">
-              <img
-                src="assets/project-4.png"
-                alt="Crypto Market"
-                class="project-card__image"
-              />
-              <div class="project-card__info">
-                <h5>Crypto Market</h5>
-                <p>August 2023</p>
-              </div>
-              <p class="project-card__desc">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
-                autem soluta consequatur, sequi et sint laudantium non rem
-                veritatis.
-              </p>
-              <button class="btn">View Live Demo</button>
-            </div>
-            <div class="project-card">
-              <img
-                src="assets/project-8.png"
-                alt="Jobs Platform"
-                class="project-card__image"
-              />
-              <div class="project-card__info">
-                <h5>Chat GPT Lite</h5>
-                <p>August 2023</p>
-              </div>
-              <p class="project-card__desc">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
-                autem soluta consequatur, sequi et sint laudantium non rem
-                veritatis.
-              </p>
-              <button class="btn">View Live Demo</button>
-            </div>
+            </section>
           </div>
-        </section>
+        </article>
+
+        <article class="resume" data-page="resume">
+          <header>
+            <h2 class="h2 article-title">Resume</h2>
+          </header>
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+              <h3 class="h3">Education</h3>
+            </div>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">SMPS FAJAR INDAH</h4>
+                <span>2019 — 2022</span>
+                <p class="timeline-text">
+                  Selama menempuh pendidikan di SMPS Fajar Indah, saya
+                  mendapatkan dasar yang kuat dalam berbagai mata pelajaran
+                  serta mengembangkan keterampilan berpikir kritis dan
+                  problem-solving. Saya juga aktif dalam berbagai kegiatan
+                  sekolah yang membantu meningkatkan keterampilan komunikasi dan
+                  kerja sama tim.
+                </p>
+              </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">SMKS FAJAR INDAH</h4>
+                <span>2022 — 2024</span>
+                <p class="timeline-text">
+                  Di SMKS Fajar Indah, saya mempelajari akuntansi, termasuk
+                  pencatatan transaksi, penyusunan laporan keuangan, serta
+                  analisis keuangan. Saya juga memahami pentingnya ketelitian
+                  dan ketepatan dalam pengelolaan data keuangan. Selain itu,
+                  saya aktif dalam berbagai tugas dan proyek yang membantu saya
+                  mengasah keterampilan dalam bidang akuntansi serta
+                  penerapannya di dunia kerja.
+                </p>
+              </li>
+            </ol>
+
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+              <h3 class="h3">Experience</h3>
+            </div>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Magang Di PT Jakarta Internasional Expo
+                </h4>
+                <span>July 2024 — Oktober 2024</span>
+                <p class="timeline-text">
+                  Selama magang, saya belajar dan menerapkan ilmu akuntansi
+                  dalam dunia kerja, seperti pencatatan transaksi, pembuatan
+                  laporan keuangan, serta analisis keuangan sederhana. Saya juga
+                  terbiasa menggunakan software akuntansi untuk mempermudah
+                  pekerjaan.
+                </p>
+              </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title" style="margin-top: 20px">
+                  Osis Bidang Kebersihan - SMKS Fajar Indah
+                </h4>
+                <span>July 2024 — Oktober 2024</span>
+                <p class="timeline-text">
+                  Sebagai anggota OSIS bidang kebersihan, saya memiliki tanggung
+                  jawab dalam menjaga kebersihan dan kerapihan lingkungan
+                  sekolah. Saya juga ikut serta dalam mengoordinasikan program
+                  kebersihan, serta bekerja sama dengan siswa lain untuk
+                  menciptakan lingkungan belajar yang nyaman dan sehat.
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+              <h3 class="h3">Skill</h3>
+            </div>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Pemrograman</h4>
+                <span>2022 — Now</span>
+                <p class="timeline-text">
+                  Saya memiliki pemahaman dalam pengembangan web, khususnya
+                  menggunakan HTML, CSS, dan JavaScript. Selain itu, saya terus
+                  belajar dan mengembangkan keterampilan dalam berbagai
+                  teknologi lain, seperti Python untuk memahami dasar-dasar
+                  pemrograman dan logika algoritma, React.js untuk membangun
+                  aplikasi web yang interaktif dan dinamis, serta Bootstrap dan
+                  Tailwind CSS untuk mempercepat proses desain dan menciptakan
+                  tampilan website yang responsif dan modern.
+                </p>
+              </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Akuntansi</h4>
+                <span>2022 — Now</span>
+                <p class="timeline-text">
+                  Saya memiliki keterampilan dalam pencatatan transaksi
+                  keuangan, penyusunan laporan keuangan, serta analisis data
+                  keuangan. Saya juga memahami prinsip-prinsip akuntansi yang
+                  diterapkan di dunia kerja, termasuk penggunaan software
+                  akuntansi untuk pengelolaan keuangan yang lebih efisien.
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="skill">
+            <h3 class="h3 skills-title">My skills</h3>
+            <ul class="skills-list content-card">
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Web Design</h5>
+                  <data value="70">70%</data>
+                </div>
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 70%"></div>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Web Development</h5>
+                  <data value="80">80%</data>
+                </div>
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 80%"></div>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Mobile Apps</h5>
+                  <data value="30">30%</data>
+                </div>
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 30%"></div>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Akuntansi</h5>
+                  <data value="50">50%</data>
+                </div>
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 50%"></div>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <article class="portfolio" data-page="portfolio">
+          <header>
+            <h2 class="h2 article-title">Portfolio</h2>
+          </header>
+          <section class="projects">
+            <ul class="filter-list">
+              <li class="filter-item">
+                <button class="active" data-filter-btn>All</button>
+              </li>
+              <li class="filter-item">
+                <button data-filter-btn>Web design</button>
+              </li>
+              <li class="filter-item">
+                <button data-filter-btn>Web Applications</button>
+              </li>
+              <li class="filter-item">
+                <button data-filter-btn>Web development</button>
+              </li>
+            </ul>
+
+            <div class="filter-select-box">
+              <button class="filter-select" data-select>
+                <div class="select-value" data-selecct-value>
+                  Select category
+                </div>
+                <div class="select-icon">
+                  <ion-icon name="chevron-down"></ion-icon>
+                </div>
+              </button>
+              <ul class="select-list">
+                <li class="select-item">
+                  <button data-select-item>All</button>
+                </li>
+                <li class="select-item">
+                  <button data-select-item>Web design</button>
+                </li>
+                <li class="select-item">
+                  <button data-select-item>Web Applications</button>
+                </li>
+                <li class="select-item">
+                  <button data-select-item>Web development</button>
+                </li>
+              </ul>
+            </div>
+
+            <ul class="project-list">
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web development"
+              >
+                <a href="https://lexblogg.vercel.app/">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="images/project-1.png"
+                      alt="Website Personal Portfolio"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">Website Personal Portfolio</h3>
+                  <p class="project-category">Web development</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web development"
+              >
+                <a href="https://rexustore.vercel.app/">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="images/project-2.png"
+                      alt="Rexustore"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">Rexustore</h3>
+                  <p class="project-category">Web development</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web design"
+              >
+                <a href="https://lexxxy-personal.vercel.app/">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="images/project-3.png"
+                      alt="Personal Branding"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">Personal Branding</h3>
+                  <p class="project-category">Web design</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="Web Applications"
+              >
+                <a href="https://crypto-markett.vercel.app/">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="images/project-4.png"
+                      alt="Crypto Trading View"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">Crypto Trading View</h3>
+                  <p class="project-category">Web applications</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web design"
+              >
+                <a href="https://iskariot-gemini.vercel.app/">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="images/project-5.png"
+                      alt="Gemini"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">Iskariot Gemini</h3>
+                  <p class="project-category">Web design</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web design"
+              >
+                <a href="https://mamak-coffe.vercel.app/">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="images/project-6.png"
+                      alt="Mamak Coffee"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">Mamak Coffee</h3>
+                  <p class="project-category">Web design</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web development"
+              >
+                <a href="#">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img src="images/project-7.png" alt="Film" loading="lazy" />
+                  </figure>
+                  <h3 class="project-title">Film</h3>
+                  <p class="project-category">Web development</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web development"
+              >
+                <a href="https://chatgpt-lite-psi.vercel.app/">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img
+                      src="images/project-8.png"
+                      alt="ChatBot"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <h3 class="project-title">ChatBot</h3>
+                  <p class="project-category">Web development</p>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <article class="games" data-page="game fav">
+          <header>
+            <h2 class="h2 article-title">Game Fav</h2>
+          </header>
+          <section class="blog-posts game-container">
+            <ul class="blog-posts-list">
+              <li class="blog-post-item game-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="https://www.nintendo.com/eu/media/images/10_share_images/games_15/wiiu_14/SI_WiiU_AssassinsCreedIVBlackFlag_image1600w.jpg"
+                      alt="Assassins Creed Black Flag"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div class="blog-content game-item">
+                    <div class="blog-meta">
+                      <p class="blog-category">Game Favorit</p>
+                      <span class="dot"></span>
+                    </div>
+                    <h3 class="h3 blog-item-title">
+                      Assassins Creed Black Flag
+                    </h3>
+                    <p class="blog-text">
+                      Game bajak laut terbaik dengan dunia terbuka luas dan
+                      pertempuran kapal epik.
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="blog-post-item game-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="https://image.api.playstation.com/vulcan/ap/rnd/202409/1109/c868a298b235155170e98cabfa4a6de74975dff36b3d7848.jpg"
+                      alt="Efootball 2025"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div class="blog-content game-item">
+                    <div class="blog-meta">
+                      <p class="blog-category">Game Favorit</p>
+                      <span class="dot"></span>
+                    </div>
+                    <h3 class="h3 blog-item-title">Efootball 2025</h3>
+                    <p class="blog-text">
+                      Simulasi sepak bola dengan grafis realistis dan gameplay
+                      kompetitif.
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="blog-post-item game-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="https://gamecraves.com/wp-content/uploads/2023/09/Assassins-Creed-Revelations-Header.jpg"
+                      alt="Assassins Creed Revelations"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div class="blog-content game-item">
+                    <div class="blog-meta">
+                      <p class="blog-category">Game Favorit</p>
+                      <span class="dot"></span>
+                    </div>
+                    <h3 class="h3 blog-item-title">
+                      Assassins Creed Revelations
+                    </h3>
+                    <p class="blog-text">
+                      Petualangan terakhir Ezio Auditore dalam mencari rahasia
+                      Altair.
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="blog-post-item game-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="https://gaming-cdn.com/images/products/545/616x353/sleeping-dogs-definitive-edition-definitive-edition-pc-mac-spil-steam-cover.jpg?v=1662474567"
+                      alt="Sleeping Dogs"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div class="blog-content game-item">
+                    <div class="blog-meta">
+                      <p class="blog-category">Game Favorit</p>
+                      <span class="dot"></span>
+                    </div>
+                    <h3 class="h3 blog-item-title">
+                      Sleeping Dogs Definitive Edition
+                    </h3>
+                    <p class="blog-text">
+                      Game aksi dunia terbuka dengan tema triad di Hong Kong
+                      yang penuh intrik.
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="blog-post-item game-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="https://wallpapercave.com/wp/nwIRm8U.jpg"
+                      alt="Assassins Creed Brotherhood"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div class="blog-content game-item">
+                    <div class="blog-meta">
+                      <p class="blog-category">Game Favorit</p>
+                      <span class="dot"></span>
+                    </div>
+                    <h3 class="h3 blog-item-title">
+                      Assassins Creed Brotherhood
+                    </h3>
+                    <p class="blog-text">
+                      Ezio membangun kembali ordo Assassin dan bertarung melawan
+                      keluarga Borgia di Roma.
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="https://images7.alphacoders.com/421/thumb-1920-421814.jpg"
+                      alt="Resident Evil 6"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div class="blog-content game-item">
+                    <div class="blog-meta">
+                      <p class="blog-category">Game Favorit</p>
+                      <span class="dot"></span>
+                    </div>
+                    <h3 class="h3 blog-item-title">Resident Evil 6</h3>
+                    <p class="blog-text">Game FPS zombie.</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <div class="music-container">
+          <article class="games" data-page="music fav">
+            <header>
+              <h2 class="h2 article-title">Music Fav</h2>
+            </header>
+            <section class="music-favorites">
+              <h2 class="section-title">Playlist Music Favorit</h2>
+              <div class="music-list">
+                <div class="music-item" onclick="togglePlay(this)">
+                  <figure class="music-banner-box">
+                    <img
+                      src="https://i.ytimg.com/vi/k7Hdltf9qLI/maxresdefault.jpg"
+                      alt="Sia - Snowman"
+                      loading="lazy"
+                    />
+                    <div class="play-overlay">▶</div>
+                  </figure>
+                  <div class="music-content">
+                    <h3 class="music-title">Snowman</h3>
+                    <p class="music-artist">Sia</p>
+                    <p class="music-album">Everyday Is Christmas</p>
+                    <p class="music-duration">2:45</p>
+                    <audio
+                      class="music-audio"
+                      src="audio/Sia - Snowman Lyrics.mp3"
+                      ontimeupdate="updateProgress(this)"
+                    ></audio>
+                    <div class="progress-container">
+                      <div class="progress-bar"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="music-item" onclick="togglePlay(this)">
+                  <figure class="music-banner-box">
+                    <img
+                      src="https://i.ytimg.com/vi/GZoUCPx59Ks/maxresdefault.jpg"
+                      alt="Joji - Glimpse of Us"
+                      loading="lazy"
+                    />
+                    <div class="play-overlay">▶</div>
+                  </figure>
+                  <div class="music-content">
+                    <h3 class="music-title">Glimpse of Us</h3>
+                    <p class="music-artist">Joji</p>
+                    <p class="music-album">Smithereens</p>
+                    <p class="music-duration">3:53</p>
+                    <audio
+                      class="music-audio"
+                      src="audio/Joji - Glimpse of Us Lyrics.mp3"
+                      ontimeupdate="updateProgress(this)"
+                    ></audio>
+                    <div class="progress-container">
+                      <div class="progress-bar"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="music-item" onclick="togglePlay(this)">
+                  <figure class="music-banner-box">
+                    <img
+                      src="https://i.ytimg.com/vi/swaKxeArlWE/maxresdefault.jpg"
+                      alt="The Neighbourhood - Sweater Weather"
+                      loading="lazy"
+                    />
+                    <div class="play-overlay">▶</div>
+                  </figure>
+                  <div class="music-content">
+                    <h3 class="music-title">Sweater Weather</h3>
+                    <p class="music-artist">The Neighbourhood</p>
+                    <p class="music-album">I Love You.</p>
+                    <p class="music-duration">3:56</p>
+                    <audio
+                      class="music-audio"
+                      src="audio/The Neighbourhood - Sweater Weather Lyrics.mp3"
+                      ontimeupdate="updateProgress(this)"
+                    ></audio>
+                    <div class="progress-container">
+                      <div class="progress-bar"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="music-item" onclick="togglePlay(this)">
+                  <figure class="music-banner-box">
+                    <img
+                      src="https://images.genius.com/46d0cab6d3c43123c5b5e58e2948bf07.1000x1000x1.jpg"
+                      alt="Djo - End Of Beginning"
+                      loading="lazy"
+                    />
+                    <div class="play-overlay">▶</div>
+                  </figure>
+                  <div class="music-content">
+                    <h3 class="music-title">End Of Beginning</h3>
+                    <p class="music-artist">Djo</p>
+                    <p class="music-album">Decide</p>
+                    <p class="music-duration">2:39</p>
+                    <audio
+                      class="music-audio"
+                      src="audio/Djo - End Of Beginning Official Audio.mp3"
+                      ontimeupdate="updateProgress(this)"
+                    ></audio>
+                    <div class="progress-container">
+                      <div class="progress-bar"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </article>
+        </div>
       </div>
-    </section>
+    </main>
 
-    <section class="career">
-      <div class="career__jobs">
-        <h3>Work Experience</h3>
-        <div class="job">
-          <i class="ri-terminal-box-line"></i>
-          <div class="job__info">
-            <h5>Front-End Developer</h5>
-            <p>Ongoing</p>
-          </div>
-        </div>
-        <div class="job">
-          <i class="ri-code-box-line"></i>
-          <div class="job__info">
-            <h5>Web Development</h5>
-            <p>Ongoing</p>
-          </div>
-        </div>
-        <div class="job">
-          <i class="ri-file-list-3-line"></i>
-          <div class="job__info">
-            <h5>Dokumentasi Magang SMK</h5>
-            <p>2024</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="career__awards">
-        <h3>Awards & Recognition</h3>
-        <div class="award">
-          <div>
-            <i class="ri-medal-fill"></i>
-            <div class="award__info">
-              <h5>Teens Developer at <span> Timedoor Academy</span></h5>
-              <p>November 2023</p>
-            </div>
-          </div>
-          <a href="#"><i class="ri-external-link-line"></i></a>
-        </div>
-        <div class="award">
-          <div>
-            <i class="ri-javascript-line"></i>
-            <div class="award__info">
-              <h5>React Developer At at <span>Timedoor Academy</span></h5>
-              <p>January 2023</p>
-            </div>
-          </div>
-          <a href="#"><i class="ri-external-link-line"></i></a>
-        </div>
-        <div class="award">
-          <div>
-            <i class="ri-award-fill"></i>
-            <div class="award__info">
-              <h5>Teens Web Developer <span>Timedoor Academys</span></h5>
-              <p>August 2022</p>
-            </div>
-          </div>
-          <a href="#"><i class="ri-external-link-line"></i></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact">
-      <h5>Mau Kolaborasi?</h5>
-      <h2>Ayo Buat Proyek Bareng!</h2>
-      <button class="btn">Hubungi Saya</button>
-      <p>Email: <span>contact@nightfall.dev</span></p>
-    </section>
-
-    <footer class="footer">
-      <div class="footer__brand">
-        <a href="#">Nightfall Developers</a>
-        <p>© 2025 Nightfall developers.</p>
-      </div>
-      <div class="footer__links">
-        <a href="#">Home</a>
-        <a href="#">Projects</a>
-        <a href="#">Skills</a>
-        <a href="#">About</a>
-      </div>
-    </footer>
+    <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>

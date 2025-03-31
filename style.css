@@ -821,13 +821,6 @@ main {
   padding: 20px;
 }
 
-.skills-item {
-    font-size: 1.5rem;
-    color: #000;
-    opacity: 0; /* Mulai dengan transparan */
-    transform: scale(0.8); /* Mulai dari ukuran lebih kecil */
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Transisi untuk efek */
-}
 
 .skills-item:not(:last-child) {
   margin-bottom: 15px;

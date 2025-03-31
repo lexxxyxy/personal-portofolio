@@ -229,170 +229,81 @@ blinkCursor();
 type();
 
 document.addEventListener("DOMContentLoaded", function () {
-  anime({
-    targets: ".resume",
-    opacity: [0, 1],
-    translateY: [-50, 0],
-    easing: "easeOutExpo",
-    duration: 1200,
+  gsap.from(".resume", {
+    opacity: 0,
+    duration: 1.2,
+    ease: "power2.out",
   });
 
-  anime({
-    targets: ".timeline-item",
-    opacity: [0, 1],
-    translateX: [-50, 0],
-    easing: "easeOutExpo",
-    duration: 1000,
-    delay: anime.stagger(300),
+  gsap.from(".timeline-item", {
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+    stagger: 0.3,
   });
 
-  anime({
-    targets: ".icon-box",
-    scale: [0, 1],
-    rotate: [180, 0],
-    easing: "easeOutElastic(1, .6)",
-    duration: 1200,
-    delay: anime.stagger(300, { start: 500 }),
+  gsap.from(".icon-box", {
+    opacity: 0,
+    duration: 1.2,
+    ease: "power2.out",
+    stagger: { amount: 0.5, from: "start" },
   });
 
-  document.querySelectorAll(".timeline-item").forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      anime({
-        targets: item,
-        scale: 1.05,
-        duration: 300,
-        easing: "easeOutQuad",
-      });
-    });
-    item.addEventListener("mouseleave", () => {
-      anime({
-        targets: item,
-        scale: 1,
-        duration: 300,
-        easing: "easeOutQuad",
-      });
-    });
+  gsap.from(".service", {
+    opacity: 0,
+    duration: 1.2,
+    ease: "power2.out",
+    delay: 0.5,
   });
 
-  anime({
-    targets: ".service",
-    opacity: [0, 1],
-    scale: [0.9, 1],
-    easing: "easeOutExpo",
-    duration: 1200,
-    delay: 500,
+  gsap.from(".service-item", {
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+    stagger: 0.3,
+    delay: 0.7,
   });
 
-  anime({
-    targets: ".service-item",
-    opacity: [0, 1],
-    translateY: [50, 0],
-    easing: "easeOutExpo",
-    duration: 1000,
-    delay: anime.stagger(300, { start: 700 }),
-  });
-
-  const animateProjects = () => {
-    requestAnimationFrame(() => {
-      document.querySelectorAll('.project-item').forEach(item => {
-        const rect = item.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          anime({
-            targets: item,
-            translateY: [50, 0],
-            opacity: [0, 1],
-            duration: 600,
-            easing: 'easeOutExpo'
-          });
-        }
-      });
-    });
-  };
-  window.addEventListener('scroll', animateProjects);
-
-  document.querySelectorAll('.skills-item').forEach((item, index) => {
-    setTimeout(() => {
-      anime({
-        targets: item,
-        opacity: [0, 1],
-        scale: [0.4, 1],
-        duration: 1000,
-        easing: 'easeOutExpo'
-      });
-    }, index * 900);
-  });
-
-  document.querySelectorAll('.game-item').forEach((item, index) => {
-    setTimeout(() => {
-      anime({
-        targets: item,
-        opacity: [0, 1],
-        scale: [0.8, 1],
-        duration: 800,
-        easing: 'easeOutExpo'
-      });
-    }, index * 300);
-  });
-
-  anime({
-    targets: ".testimonial-item",
-    opacity: [0, 1],
-    scale: [0.8, 1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: anime.stagger(300, { start: 500 }),
-  });
-
-  anime({
-    targets: ".music-item",
-    opacity: [0, 1],
-    scale: [0.5, 1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: anime.stagger(300, { start: 500 }),
-  });
-
-  document.querySelectorAll(".music-banner-box").forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      anime({
-        targets: item.querySelector(".play-overlay"),
-        scale: [0.8, 1.2],
-        duration: 300,
-        easing: "easeInOutQuad",
-      });
-    });
-    item.addEventListener("mouseleave", () => {
-      anime({
-        targets: item.querySelector(".play-overlay"),
-        scale: 1,
-        duration: 300,
-        easing: "easeInOutQuad",
-      });
+  gsap.utils.toArray(".project-item").forEach((item) => {
+    gsap.from(item, {
+      scrollTrigger: item,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power2.out",
     });
   });
 
-  document.querySelectorAll(".music-item").forEach((item) => {
-    const audio = item.querySelector(".music-audio");
-    const banner = item.querySelector(".music-banner-box");
-    
-    audio.addEventListener("play", () => {
-      anime({
-        targets: banner,
-        boxShadow: "0px 0px 20px rgba(255, 255, 255, 0.8)",
-        scale: [1, 1.05],
-        duration: 500,
-        easing: "easeInOutQuad"
-      });
-    });
-    
-    audio.addEventListener("pause", () => {
-      anime({
-        targets: banner,
-        boxShadow: "none",
-        scale: 1,
-        duration: 500,
-        easing: "easeInOutQuad"
-      });
+  gsap.utils.toArray(".skills-item").forEach((item, index) => {
+    gsap.from(item, {
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      delay: index * 0.5,
     });
   });
-});
+
+  gsap.utils.toArray(".game-item").forEach((item, index) => {
+    gsap.from(item, {
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out",
+      delay: index * 0.3,
+    });
+  });
+
+  gsap.from(".testimonial-item", {
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+    stagger: 0.3,
+    delay: 0.5,
+  });
+
+  gsap.from(".music-item", {
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+    stagger: 0.3,
+    delay: 0.5,
+  });
+}); 

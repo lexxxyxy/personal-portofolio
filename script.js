@@ -307,3 +307,22 @@ document.addEventListener("DOMContentLoaded", function () {
     delay: 0.5,
   });
 }); 
+
+function showDetail(src) {
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+
+  modal.style.display = "block";
+  modalImg.src = src;
+}
+
+function closeModal() {
+  const modal = document.getElementById("modal");
+  modal.style.display = "none";
+}
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("aosp-loader").remove();
+  }, 3000); 
+});

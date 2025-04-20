@@ -455,7 +455,31 @@
               </li>
             </ol>
           </section>
+          <header class="certificates-header">
+            <h1>Sertifikat Xyxy Lex</h1>
+            <p>Kumpulan sertifikat yang pernah diraih oleh Owner website</p>
+          </header>
+        
+          <section class="certificates">
+            <div class="certificate" onclick="showDetail('images/Teens Web Developer 48 - Alexandro Francisco_page-0001.jpg')">
+              <img src="images/Teens Web Developer 48 - Alexandro Francisco_page-0001.jpg" alt="Web Development">
+              <h2>Web Development</h2>
+              <p>Timedoor Academy - 2024 </p>
+            </div>
+        
+            <div class="certificate" onclick="showDetail('images/Gambar WhatsApp 2025-04-20 pukul 12.33.17_19a7c579.jpg')">
+              <img src="images/Gambar WhatsApp 2025-04-20 pukul 12.33.17_19a7c579.jpg" alt="Software Developer">
+              <h2>Software Developers - Android Apps Developer</h2>
+              <p>Dari Timedoor academy - 2025</p>
+            </div>
+          </section>
 
+          
+          <div id="modal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-img">
+          </div>
+        
           <section class="skill">
             <h3 class="h3 skills-title">My skills</h3>
             <ul class="skills-list content-card">
@@ -962,7 +986,10 @@
         </div>
       </div>
     </main>
-
+    <div id="aosp-loader">
+      <div class="aosp-text">Loading</div>
+      <div class="scan-lines"></div>
+    </div>
     <script src="script.js"></script>
     <script
       type="module"

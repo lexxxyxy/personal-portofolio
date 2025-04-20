@@ -1776,3 +1776,144 @@ main {
   }
 }
 
+.certificates-header {
+  background-color: #1e1e2f;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+ .certificates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.7rem;
+  padding: 2rem;
+}
+
+.certificate {
+  background-color: #2e2e3f;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+  text-align: center;
+}
+
+.certificate img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.certificate:hover {
+  transform: translateY(-5px);
+  background-color: #eef1f5;
+}
+
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* AOSP Loader */
+#aosp-loader {
+  position: fixed;
+  background: black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeOut 3s ease forwards;
+  animation-delay: 2.5s;
+}
+
+.aosp-text {
+  font-size: 3rem;
+  color: #00ff99;
+  letter-spacing: 10px;
+  animation: glitch 2s infinite;
+  z-index: 2;
+}
+
+.scan-lines {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 153, 0.1),
+    rgba(0, 255, 153, 0.1) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: scan 4s linear infinite;
+  z-index: 1;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 0 red, -2px 0 blue;
+  }
+  20% {
+    text-shadow: -2px 0 red, 2px 0 blue;
+  }
+  40% {
+    text-shadow: 2px 2px red, -2px -2px blue;
+  }
+  60% {
+    text-shadow: -2px 2px red, 2px -2px blue;
+  }
+  80% {
+    text-shadow: 0 0 red, 0 0 blue;
+  }
+  100% {
+    text-shadow: 2px 0 red, -2px 0 blue;
+  }
+}
+
+@keyframes scan {
+  0% { background-position: 0 -100%; }
+  100% { background-position: 0 100%; }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

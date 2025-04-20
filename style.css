@@ -1917,3 +1917,14 @@ main {
     visibility: hidden;
   }
 }
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.scroll-animation.active {
+  opacity: 1;
+  transform: translateY(0);
+}

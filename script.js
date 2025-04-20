@@ -326,3 +326,36 @@ window.addEventListener("load", () => {
     document.getElementById("aosp-loader").remove();
   }, 3000); 
 });
+
+
+function scrollAnimation() {
+  const scrollElements = document.querySelectorAll(".scroll-animation");
+
+  const elementInView = (el, offset = 100) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (
+      elementTop <=
+      (window.innerHeight || document.documentElement.clientHeight) - offset
+    );
+  };
+
+  const displayScrollElement = (element) => {
+    element.classList.add("active");
+  };
+
+  const hideScrollElement = (element) => {
+    element.classList.remove("active");
+  };
+
+  scrollElements.forEach((el) => {
+    if (elementInView(el)) {
+      displayScrollElement(el);
+    } else {
+      hideScrollElement(el);
+    }
+  });
+}
+
+window.addEventListener("scroll", scrollAnimation);
+window.addEventListener("load", scrollAnimation); // trigger awal
+

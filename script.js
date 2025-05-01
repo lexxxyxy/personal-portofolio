@@ -348,7 +348,7 @@ const startLoading = () => {
   setTimeout(() => {
     loader.style.display = 'none'; // Sembunyikan loader setelah animasi selesai
     enableScroll(); // Aktifkan scroll kembali
-  }, 3000); // Waktu animasi loading, sesuaikan dengan durasi animasi mu
+  }, 4000); // Waktu animasi loading, sesuaikan dengan durasi animasi mu
 };
 
 // Panggil fungsi startLoading ketika halaman dimuat

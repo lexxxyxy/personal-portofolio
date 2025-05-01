@@ -328,34 +328,30 @@ window.addEventListener("load", () => {
 });
 
 
-function scrollAnimation() {
-  const scrollElements = document.querySelectorAll(".scroll-animation");
+// Ambil elemen loader
+const loader = document.getElementById('aosp-loader');
 
-  const elementInView = (el, offset = 100) => {
-    const elementTop = el.getBoundingClientRect().top;
-    return (
-      elementTop <=
-      (window.innerHeight || document.documentElement.clientHeight) - offset
-    );
-  };
+// Fungsi untuk mencegah scroll
+const disableScroll = () => {
+  document.body.style.overflow = 'hidden'; // Menonaktifkan scroll
+};
 
-  const displayScrollElement = (element) => {
-    element.classList.add("active");
-  };
+// Fungsi untuk mengaktifkan scroll
+const enableScroll = () => {
+  document.body.style.overflow = ''; // Mengembalikan scroll ke keadaan semula
+};
 
-  const hideScrollElement = (element) => {
-    element.classList.remove("active");
-  };
+// Fungsi untuk memulai loading dan menonaktifkan scroll
+const startLoading = () => {
+  disableScroll();
+  loader.style.display = 'flex'; // Tampilkan loader (pastikan ini sesuai dengan kondisi awalmu)
+  setTimeout(() => {
+    loader.style.display = 'none'; // Sembunyikan loader setelah animasi selesai
+    enableScroll(); // Aktifkan scroll kembali
+  }, 3000); // Waktu animasi loading, sesuaikan dengan durasi animasi mu
+};
 
-  scrollElements.forEach((el) => {
-    if (elementInView(el)) {
-      displayScrollElement(el);
-    } else {
-      hideScrollElement(el);
-    }
-  });
-}
+// Panggil fungsi startLoading ketika halaman dimuat
+window.addEventListener('load', startLoading);
 
-window.addEventListener("scroll", scrollAnimation);
-window.addEventListener("load", scrollAnimation); // trigger awal
-
+// Mengaktifkan scroll kembali saat loader selesai

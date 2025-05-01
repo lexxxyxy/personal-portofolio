@@ -1845,7 +1845,6 @@ main {
 }
 
 /* AOSP Loader */
-/* Loader Container */
 #aosp-loader {
   position: fixed;
   background: black;
@@ -1862,7 +1861,6 @@ main {
   animation-delay: 2.5s;
 }
 
-/* Teks Loading dengan efek Glitch */
 .aosp-text {
   font-size: 3rem;
   color: #00ff99;
@@ -1871,7 +1869,6 @@ main {
   z-index: 2;
 }
 
-/* Scan lines dengan animasi bergerak */
 .scan-lines {
   position: absolute;
   top: 0;
@@ -1888,7 +1885,6 @@ main {
   z-index: 1;
 }
 
-/* Efek Glitch pada teks */
 @keyframes glitch {
   0% {
     text-shadow: 2px 0 red, -2px 0 blue;
@@ -1910,21 +1906,17 @@ main {
   }
 }
 
-/* Animasi untuk scan lines */
 @keyframes scan {
   0% { background-position: 0 -100%; }
   100% { background-position: 0 100%; }
 }
 
-/* Animasi fade-out untuk loader */
 @keyframes fadeOut {
   to {
     opacity: 0;
     visibility: hidden;
   }
 }
-
-/* Animasi scroll untuk elemen */
 .scroll-animation {
   opacity: 0;
   transform: translateY(30px);

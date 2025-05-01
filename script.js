@@ -328,6 +328,37 @@ window.addEventListener("load", () => {
 });
 
 
+function scrollAnimation() {
+  const scrollElements = document.querySelectorAll(".scroll-animation");
+
+  const elementInView = (el, offset = 100) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (
+      elementTop <=
+      (window.innerHeight || document.documentElement.clientHeight) - offset
+    );
+  };
+
+  const displayScrollElement = (element) => {
+    element.classList.add("active");
+  };
+
+  const hideScrollElement = (element) => {
+    element.classList.remove("active");
+  };
+
+  scrollElements.forEach((el) => {
+    if (elementInView(el)) {
+      displayScrollElement(el);
+    } else {
+      hideScrollElement(el);
+    }
+  });
+}
+
+window.addEventListener("scroll", scrollAnimation);
+window.addEventListener("load", scrollAnimation); 
+
 // Ambil elemen loader
 const loader = document.getElementById('aosp-loader');
 
@@ -348,10 +379,12 @@ const startLoading = () => {
   setTimeout(() => {
     loader.style.display = 'none'; // Sembunyikan loader setelah animasi selesai
     enableScroll(); // Aktifkan scroll kembali
-  }, 4000); // Waktu animasi loading, sesuaikan dengan durasi animasi mu
+  }, 3500); // Waktu animasi loading, sesuaikan dengan durasi animasi mu
 };
 
 // Panggil fungsi startLoading ketika halaman dimuat
 window.addEventListener('load', startLoading);
 
 // Mengaktifkan scroll kembali saat loader selesai
+
+

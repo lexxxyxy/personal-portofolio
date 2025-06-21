@@ -23,7 +23,12 @@
     <main>
       <aside class="sidebar" data-sidebar>
         <div class="sidebar-info">
-          <img style="border-radius: 10px;" src="images/pp.jpg" alt="Xyxy" width="80" />
+          <img
+            style="border-radius: 10px"
+            src="images/pp.jpg"
+            alt="Xyxy"
+            width="80"
+          />
           <div class="info-content">
             <h1 class="name animated-name" title="Xyxy">
               <span id="name-text"></span>
@@ -984,6 +989,54 @@
                     <audio
                       class="music-audio"
                       src="audio/Djo - End Of Beginning Official Audio.mp3"
+                      ontimeupdate="updateProgress(this)"
+                    ></audio>
+                    <div class="progress-container">
+                      <div class="progress-bar"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="music-item" onclick="togglePlay(this)">
+                  <figure class="music-banner-box">
+                    <img
+                      src="https://i.ytimg.com/vi/swaKxeArlWE/maxresdefault.jpg"
+                      alt="The Neighbourhood - Sweater Weather"
+                      loading="lazy"
+                    />
+                    <div class="play-overlay">▶</div>
+                  </figure>
+                  <div class="music-content">
+                    <h3 class="music-title">Sweater Weather</h3>
+                    <p class="music-artist">The Neighbourhood</p>
+                    <p class="music-album">I Love You.</p>
+                    <p class="music-duration">3:56</p>
+                    <audio
+                      class="music-audio"
+                      src="audio/The Neighbourhood - Sweater Weather Lyrics.mp3"
+                      ontimeupdate="updateProgress(this)"
+                    ></audio>
+                    <div class="progress-container">
+                      <div class="progress-bar"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="music-item" onclick="togglePlay(this)">
+                  <figure class="music-banner-box">
+                    <img
+                      src="https://images5.alphacoders.com/127/1276272.jpg"
+                      alt="Suzume"
+                      loading="lazy"
+                    />
+                    <div class="play-overlay">▶</div>
+                  </figure>
+                  <div class="music-content">
+                    <h3 class="music-title">Suzume Soundtrack</h3>
+                    <p class="music-artist">-</p>
+                    <p class="music-album">Decide</p>
+                    <p class="music-duration">3:56</p>
+                    <audio
+                      class="music-audio"
+                      src="audio/RADWIMPS - すずめ feat.十明 [Official Lyric Video].mp3"
                       ontimeupdate="updateProgress(this)"
                     ></audio>
                     <div class="progress-container">
